@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { WinstonModule } from 'nest-winston';
+import { HabitsModule } from './habits/habits.module';
 import * as winston from 'winston';
 
 @Module({
@@ -26,6 +27,7 @@ import * as winston from 'winston';
             // Add other transports like File or DailyRotateFile here
           ],
         }),
+    HabitsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
