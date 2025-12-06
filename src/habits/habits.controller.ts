@@ -1,4 +1,4 @@
-import { Controller, Get, Inject } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { HabitsService } from './habits.service';
 
 @Controller('habits')
@@ -9,4 +9,9 @@ export class HabitsController {
   findAll() {
     return this.habitsService.findAll();
   }
+
+  @Post()
+  create(@Body() createHabitInput) {
+    return this.habitsService.create(createHabitInput);
+  } 
 }
